@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<app_aspnet_core.Models.Despesa>
 
 @{
-    ViewData["Title"] = "Despesas";
+    ViewData["Title"] = "Despesas por Categoria";
 }
 
-<h1>Despesas</h1>
+    <h1>Lista da Categoria</h1>
 
-<p>
-    <a asp-action="Create"class="btn btn-primary">Nova Despesa</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +21,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Categoria)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -41,11 +37,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Categoria.Descricao)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

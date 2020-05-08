@@ -1,20 +1,18 @@
 ﻿@model IEnumerable<app_aspnet_core.Models.Categoria>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categorias";
 }
 
-<h1>Index</h1>
+<h1>Categorias</h1>
 
 <p>
-    <a asp-action="Create">Criar Nova Categoria</a>
+    <a asp-action="Create" class="btn btn-primary">Nova Categoria </a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -22,7 +20,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
+                <a asp-controller="Despesas" asp-action="PorCategoria" asp-route-id="@item.Id">@item.Descricao</a>
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
